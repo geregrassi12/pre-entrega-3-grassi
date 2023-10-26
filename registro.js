@@ -9,6 +9,11 @@ registrationForm.addEventListener("click", function () {
     };
     const userDataJSON = JSON.stringify(userData);
     localStorage.setItem("userData", userDataJSON);
-    //
-    window.location.href = "calculadora.html";
+    const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+
+    if (username !== "" && email !== "" && email.match(emailRegex)) {
+        window.location.href = "./pages/calculadora.html";
+    } else {
+        alert("Por favor, ingresa un email válido y todos los campos requeridos.");
+    }
 });
