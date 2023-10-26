@@ -14,6 +14,7 @@ registrationForm.addEventListener("click", function () {
     if (username !== "" && email !== "" && email.match(emailRegex)) {
         window.location.href = "./pages/calculadora.html";
     } else {
-        alert("Por favor, ingresa un email válido y todos los campos requeridos.");
+        const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+        errorModal.show();
     }
 });
